@@ -1,7 +1,7 @@
 // 1. 引入需要模塊
 const express = require('express')
 const app = express() 
-const PORT = process.env.PORT || 3030
+const PORT = 3030
 
 app.use(express.json())
 
@@ -48,3 +48,5 @@ app.get('/', (req,res) => {
 app.listen(PORT, () => {
   console.log(`express server running at ${ PORT }`)
 })
+
+module.exports = app
