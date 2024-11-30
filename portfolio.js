@@ -5,6 +5,7 @@ const PORT = process.env.PORT || 3030
 
 app.use(express.json())
 
+
 //cors跨域模塊
 const cors = require('cors')
 app.use(cors())
