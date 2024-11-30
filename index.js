@@ -1,7 +1,8 @@
 // 1. 引入需要模塊
 const express = require('express')
 const app = express() 
-const PORT = 3030
+const PORT = 4000
+
 
 app.use(express.json())
 
@@ -40,8 +41,9 @@ app.use(cors())
 // })
 
 // })
-app.get('/', (req,res) => {
-  res.status.json('haha')
+
+app.get('/home', (req,res) => {
+  res.status(200).json('haha')
 })
 
 //5.架設server
