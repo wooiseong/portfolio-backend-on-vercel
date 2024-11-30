@@ -41,7 +41,7 @@ app.use(cors())
 
 // })
 app.get('/', (req,res) => {
-  res.send({name: 'zs'})
+  res.status.json('haha')
 })
 
 //5.架設server
