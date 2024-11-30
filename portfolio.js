@@ -1,7 +1,7 @@
 // 1. 引入需要模塊
 const express = require('express')
 const app = express() 
-const PORT = process.env.PORT || 3030 
+const PORT = process.env.PORT || 3030
 
 app.use(express.json())
 
@@ -40,12 +40,9 @@ app.use(cors())
 // })
 
 // })
-app.post('/user', (req,res) => {
-  res.send({ name: 'zs' })
-}
-)
-
-
+app.get('/', (req,res) => {
+  res.send({name: 'zs'})
+})
 
 //5.架設server
 app.listen(PORT, () => {
