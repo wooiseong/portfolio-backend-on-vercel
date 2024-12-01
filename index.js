@@ -50,7 +50,7 @@ const db = mysql.createPool({
 // })
 
 app.get('/home', (req,res) => {
-  res.status(200).json(db)
+  res.status(200).json('200')
 })
 
 //5.架設server
