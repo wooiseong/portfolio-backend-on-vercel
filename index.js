@@ -64,7 +64,7 @@ app.get('/home', (req,res) => {
 
 db.getConnection((err, conn) => {
   if (err) console.log(err)
-  console.log('connect successfully')
+  alert('ok')
 })
 
 //5.架設server
