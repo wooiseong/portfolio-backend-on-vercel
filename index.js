@@ -43,7 +43,7 @@ app.use(cors())
 // })
 
 app.get('/home', (req,res) => {
-  res.status(200).json('haha')
+  res.status(200).json('nono')
 })
 
 //5.架設server
