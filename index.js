@@ -10,7 +10,7 @@ app.use(express.json())
 const cors = require('cors')
 app.use(cors())
 
-//2. 配置mysql
+// 2. 配置mysql
 // const mysql = require('mysql2')
 // const db = mysql.createPool({
 //   host: '127.0.0.1',
@@ -18,8 +18,15 @@ app.use(cors())
 //   password: '123456',
 //   database: 'portfolio'
 // })
+const mysql = require('mysql2')
+const db = mysql.createPool({
+  host: 'portfolio-xiong-portfolio-xiong.e.aivencloud.com',
+  user: 'avnadmin',
+  password: 'AVNS_hqHDbOfpDeQBF7wNYIm',
+  database: 'defaultdb'
+})
 
-//3.處理信息
+// 3.處理信息
 // app.post('/feedback', (req,res) => {
 //   const body = req.body
 
@@ -43,7 +50,7 @@ app.use(cors())
 // })
 
 app.get('/home', (req,res) => {
-  res.status(200).json('haha')
+  res.status(200).json(db)
 })
 
 //5.架設server
