@@ -59,7 +59,7 @@ app.use(cors())
 // })
 
 app.get('/portfolio', (req,res) => {
-  res.set('Access-Control-Allow-Origin',  `${ PORT }`);
+  res.set('Access-Control-Allow-Origin', '*');
   res.status(200).json('您的意見已經存取成功')
 })
 
