@@ -63,4 +63,4 @@ app.listen(PORT, () => {
   console.log(`express server running at ${ PORT }`)
 })
 
-module.exports = db.promise()
+module.exports = app
