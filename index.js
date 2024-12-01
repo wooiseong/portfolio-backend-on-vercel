@@ -58,7 +58,7 @@ app.use(cors())
 
 // })
 
-app.post('/portfolio', (req,res) => {
+app.get('/portfolio', (req,res) => {
   res.status(200).json('您的意見已經存取成功')
 })
 
