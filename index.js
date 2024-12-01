@@ -53,9 +53,14 @@ app.get('/home', (req,res) => {
   res.status(200).json('nono')
 })
 
+db.getConnection((err, conn) => {
+  if (err) console.log(err)
+  console.log('connect successfully')
+})
+
 //5.架設server
 app.listen(PORT, () => {
   console.log(`express server running at ${ PORT }`)
 })
 
-module.exports = app
+module.exports = db.promise()
