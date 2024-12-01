@@ -26,14 +26,14 @@ app.use(cors())
 //   database: process.env.DB_DBNAME,
 //   port: process.env.DB_PORT
 // })
-const mysql = require('mysql2')
-const db = mysql.createPool({
-  host: portfolio-xiong-portfolio-xiong.e.aivencloud.com,
-  user: avnadmin,
-  password: AVNS_hqHDbOfpDeQBF7wNYIm,
-  database: defaultdb,
-  port: 15653
-})
+// const mysql = require('mysql2')
+// const db = mysql.createPool({
+//   host: portfolio-xiong-portfolio-xiong.e.aivencloud.com,
+//   user: avnadmin,
+//   password: AVNS_hqHDbOfpDeQBF7wNYIm,
+//   database: defaultdb,
+//   port: 15653
+// })
 
 //3.處理信息
 // app.post('/feedback', (req,res) => {
@@ -58,14 +58,14 @@ const db = mysql.createPool({
 
 // })
 
-app.get('/home', (req,res) => {
-  res.status(200).json('nono')
+app.get('/portfolio', (req,res) => {
+  res.status(200).json(`${req}您的資料存取成功`)
 })
 
-db.getConnection((err, conn) => {
-  if (err) console.log(err)
-  alert('ok')
-})
+// db.getConnection(err => {
+//   if (err) console.log(err)
+//   console.log('yes')
+// })
 
 //5.架設server
 app.listen(PORT, () => {
