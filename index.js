@@ -59,7 +59,7 @@ app.use(cors())
 // })
 
 app.get('/portfolio', (req,res) => {
-  res.status(200).json(`${req}您的資料存取成功`)
+  res.status(200).json('您的意見已經存取成功')
 })
 
 // db.getConnection(err => {
