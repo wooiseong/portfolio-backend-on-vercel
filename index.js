@@ -58,17 +58,17 @@ app.use(cors())
 
 // })
 
-const mysql = require('mysql2')
-const db = mysql.createPool({
-  host: 'portfolio-xiong-portfolio-xiong.e.aivencloud.com',
-  user: 'avnadmin',
-  password: 'AVNS_hqHDbOfpDeQBF7wNYIm',
-  database: 'defaultdb'
-})
+// const mysql = require('mysql2')
+// const db = mysql.createPool({
+//   host: '127.0.0.1',
+//   user: 'root',
+//   password: '123456',
+//   database: 'portfolio'
+// })
 
 app.post('/portfolio', (req,res) => {
 
-  res.send({status:  200 , message: '用戶表單加入數據庫成功', lala: db})
+  res.send({status:  200 , message: `${req.body.name} , 您的表單加入數據庫成功`})
 })
 
 // db.getConnection(err => {
