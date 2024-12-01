@@ -18,13 +18,21 @@ app.use(cors())
 //   password: '123456',
 //   database: 'portfolio'
 // })
+// const mysql = require('mysql2')
+// const db = mysql.createPool({
+//   host: process.env.DB_HOST,
+//   user: process.env.DB_USERNAME,
+//   password: process.env.DB_PASSWORD,
+//   database: process.env.DB_DBNAME,
+//   port: process.env.DB_PORT
+// })
 const mysql = require('mysql2')
 const db = mysql.createPool({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USERNAME,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_DBNAME,
-  port: process.env.DB_PORT
+  host: portfolio-xiong-portfolio-xiong.e.aivencloud.com,
+  user: avnadmin,
+  password: AVNS_hqHDbOfpDeQBF7wNYIm,
+  database: defaultdb,
+  port: 15653
 })
 
 //3.處理信息
@@ -52,7 +60,6 @@ const db = mysql.createPool({
 
 app.get('/home', (req,res) => {
   res.status(200).json('nono')
-
   db.getConnection((err, conn) => {
     if (err) console.log(err)
     console.log('connect successfully')
