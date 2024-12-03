@@ -1,15 +1,92 @@
 // 1. 引入需要模塊
+const fs = require('fs')
+const pg = require('pg')
 const express = require('express')
 const app = express() 
 const PORT = 4000
 
 app.use(express.json())
 
-
-//cors跨域模塊
+// cors跨域模塊
 const cors = require('cors')
 app.use(cors())
 
+const mysql = require('mysql2')
+// const db = mysql.createPool({
+//   host: 'portfolio-xiong-portfolio-xiong.e.aivencloud.com',
+//   user: 'avnadmin',
+//   password: 'AVNS_hqHDbOfpDeQBF7wNYIm',
+//   database: 'defaultdb',
+//   port: '15653',
+//   ...config,
+// })
+
+const createTcpPool = async config => {
+
+  const dbConfig = {
+    host: 'portfolio-xiong-portfolio-xiong.e.aivencloud.com',
+    user: 'avnadmin',
+    password: 'AVNS_hqHDbOfpDeQBF7wNYIm',
+    database: 'defaultdb',
+    port: '15653',
+    ...config,
+  };
+
+  if (process.env.DB_ROOT_CERT) {
+    dbConfig.ssl = {
+      ca: fs.readFileSync('./ca.pem'), // e.g., '/path/to/my/server-ca.pem'
+    };
+  }
+
+  // Establish a connection to the database.
+  return mysql.createPool(dbConfig);
+};
+
+// console.log(mysql)
+
+
+app.post('/portfolio', (req,res) => {
+    const sqlStr = 'SELECT * FROM defaultdb.portfolio WHERE id = 2;'
+  mysql.query(sqlStr,body.name, (err,results) => {
+    if (err) console.log(err)
+    console.log(results) 
+  })
+  res.send({status:  200 , message: `${results} , 成功將您的表單加入數據庫`})
+})
+
+
+// //5.架設server
+app.listen(PORT, () => {
+  console.log(`express server running at ${ PORT }`)
+})
+
+module.exports = app
+
+
+// const config = {
+//   user: "USER",
+//   password: "PASSWORD",
+//   host: "HOST",
+//   port: "PORT",
+//   database: "DATABASE",
+//   ssl: {
+//     rejectUnauthorized: true,
+//     ca: fs.readFileSync("./ca.pem").toString(),
+//   },
+// };
+
+// const client = new pg.Client(config);
+// client.connect(function (err) {
+//   if (err) throw err;
+//   client.query("SELECT VERSION()", [], function (err, result) {
+//     if (err) throw err;
+
+//     console.log(result.rows[0]);
+//     client.end(function (err) {
+//       if (err) throw err;
+//     });
+//   });
+// });
 //2. 配置mysql
 // const mysql = require('mysql2')
 // const db = mysql.createPool({
@@ -66,19 +143,3 @@ app.use(cors())
 //   database: 'portfolio'
 // })
 
-app.post('/portfolio', (req,res) => {
-
-  res.send({status:  200 , message: `${req.body.name} , 您的表單加入數據庫成功`})
-})
-
-// db.getConnection(err => {
-//   if (err) console.log(err)
-//   console.log('yes')
-// })
-
-//5.架設server
-app.listen(PORT, () => {
-  console.log(`express server running at ${ PORT }`)
-})
-
-module.exports = app
