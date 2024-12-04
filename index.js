@@ -9,7 +9,7 @@ const cors = require('cors')
 app.use(cors())
 
 app.post('/portfolio', (req,res) => {
-  res.send({status:  200 , message: `${results} , 成功將您的表單加入數據庫`})
+  res.send({status:  200 , message: `${req.body.name} , 已成功將您的表單加入數據庫`})
 })
 
 
