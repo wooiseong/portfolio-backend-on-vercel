@@ -4,7 +4,7 @@ This is the backend database for the project <a href="https://github.com/wooiseo
 
 
 ## View
-Desktop (1366px)
+Postman
 ![image](https://i.ibb.co/CHfTXJ5/2024-12-19-143019.png)
 
 ## Features
