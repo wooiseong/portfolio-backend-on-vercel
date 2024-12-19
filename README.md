@@ -30,3 +30,6 @@ git clone https://github.com/wooiseong/portfolio-backend-on-vercel.git
 ```sh
 npm install
 ```
+
+### Contact
+* <a href= "mailto:wooiseongseong96@gmail.com">Email:  &nbsp;wooiseongseong96@gmail.com</a>
