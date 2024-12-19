@@ -1,6 +1,6 @@
-# portfolio-nodeJS-mySql
+# portfolio-backend-on-vercel
 
-This is the backend database for the project <a href="https://github.com/wooiseong/portfolio-project-vercel/tree/main">portfolio</a>. It utilizes express to build a simple web application to collect feedback from users and generate appropriate responses.
+This is the backend database for the project <a href="https://github.com/wooiseong/portfolio-project-vercel/tree/main">portfolio</a>. I do not apply for a remote mySql hosting service. Therefore this is only a fake API and feedback from the project cannot be stored. <br><br>For nodeJS file connected to local mySQL database:  <a href="https://github.com/wooiseong/portfolio-nodeJS-mySql">portfolio-nodeJS-mySql</a>
 
 
 ## View
